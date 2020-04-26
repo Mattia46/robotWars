@@ -13,6 +13,7 @@ const mappingAction = {
   'W': action => action === 'L' ? 'S' : 'N',
   'E': action => action === 'L' ? 'N' : 'S',
 }
+
 const rotateRobot = ({ position,  nextAction}) => {
   position.heading = mappingAction[position.heading](nextAction);
   return position;
@@ -25,11 +26,10 @@ const getPosition = ({ position }) => {
 
 const initRobot = ({ position }) => ({
   position,
-  move: ({ gameArea, nextAction }) => {
+  move: ({ gameArea, nextAction }) =>
     nextAction === 'M'
       ? moveRobot({ gameArea, position})
-      : rotateRobot({ position, nextAction })
-  },
+      : rotateRobot({ position, nextAction }),
   getCurrentPosition: () => getPosition({ position }),
 });
 

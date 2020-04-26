@@ -5,9 +5,9 @@ describe('Utils: ', () => {
     const expectedData = {
       position: {
         x: 1,
-        y: 3
+        y: 3,
+        heading: 'N'
       },
-      heading: 'N'
     }
     const input = ['1', '3', 'N']
     expect(normaliseInput(input)).toEqual(expectedData);
@@ -21,5 +21,4 @@ describe('Utils: ', () => {
     const gameBoundaries = ['5', '5'];
     expect(getArea(gameBoundaries)).toEqual(expectedData);
   });
-
 });

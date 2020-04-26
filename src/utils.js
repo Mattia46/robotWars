@@ -1,6 +1,9 @@
 const normaliseInput = position => ({
-  position: {x: parseInt(position[0]), y: parseInt(position[1])},
-  heading: position[2],
+  position: {
+    x: parseInt(position[0]),
+    y: parseInt(position[1]),
+    heading: position[2],
+  }
 })
 
 const getArea = gameBoundaries => ({

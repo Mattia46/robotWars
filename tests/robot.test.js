@@ -20,7 +20,6 @@ describe('Robot: ', () => {
   });
 
   describe('should Not Move: ', () => {
-
     it('towards Y axis', () => {
       const position = { x: 5, y: 5, heading: 'N' };
       const robot = initRobot({ position });
