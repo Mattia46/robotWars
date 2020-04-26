@@ -15,6 +15,10 @@ I have created two objects to handle the game, **Robot** and **Game** objects.
 The Robot concerns only about its current position and how to move around,
 instead the Game knows only about the game boundaries.
 
+## Improvements
+
+I should add inputs and data catchers.
+
 ## Games rules
 
 The robot start playing by setting the stating position rappresented by two integers (X and Y axis) and where the robot is heading to, i.e. N for nord, S for south, W for west and E
