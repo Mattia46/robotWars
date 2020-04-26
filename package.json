@@ -1,0 +1,29 @@
+{
+  "name": "robotwars",
+  "version": "0.1.0",
+  "description": "Robot Wars Game in NodeJS",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mattia46/robotWars.git"
+  },
+  "keywords": [
+    "functional",
+    "programming",
+    "Node",
+    "Javascript"
+  ],
+  "author": "Mattia Assogna",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Mattia46/robotWars/issues"
+  },
+  "homepage": "https://github.com/Mattia46/robotWars#readme",
+  "devDependencies": {
+    "jest": "^25.4.0",
+    "readline-sync": "^1.4.10"
+  }
+}
