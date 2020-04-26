@@ -5,7 +5,8 @@ robots within a game area.
 
 ## Approach
 
-I have used **readline-sync** to gather the player inputs in the CLI.
+I have used [readline-sync](https://github.com/anseki/readline-sync) to gather the player inputs in the CLI and [Jest](https://jestjs.io/) for **unit** and
+**integration** tests.
 
 To develop the game, I tried to keep each object as dumb as possible, by using pure functions.
 This approach allows to add new features without changing the existing behaviour.

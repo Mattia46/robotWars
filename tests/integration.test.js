@@ -1,6 +1,6 @@
-const { initGame } = require('./src/game');
-const { initRobot } = require('./src/robot');
-const { normaliseInput, getArea } = require('./src/utils');
+const { initGame } = require('../src/game');
+const { initRobot } = require('../src/robot');
+const { normaliseInput, getArea } = require('../src/utils');
 
 const robot1 = initRobot(normaliseInput(['1', '2', 'N']));
 const robot2 = initRobot(normaliseInput(['3', '3', 'E']));
