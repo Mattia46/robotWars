@@ -4,17 +4,18 @@
   "description": "Robot Wars Game in NodeJS",
   "main": "index.js",
   "scripts": {
-    "test": "npm start"
+    "start": "npm start",
+    "test": "jest"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Mattia46/robotWars.git"
   },
   "keywords": [
-    "functional",
-    "programming",
+    "functional programming",
     "Node",
-    "Javascript"
+    "Javascript",
+    "Jest"
   ],
   "author": "Mattia Assogna",
   "license": "ISC",
