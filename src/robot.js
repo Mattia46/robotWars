@@ -19,18 +19,12 @@ const rotateRobot = ({ position,  nextAction}) => {
   return position;
 }
 
-const getPosition = ({ position }) => {
-  console.log('Current position is: ', position)
-  return position;
-}
-
 const initRobot = ({ position }) => ({
-  position,
   move: ({ gameArea, nextAction }) =>
-    nextAction === 'M'
+    position = nextAction === 'M'
       ? moveRobot({ gameArea, position})
       : rotateRobot({ position, nextAction }),
-  getCurrentPosition: () => getPosition({ position }),
+  getCurrentPosition: () => position,
 });
 
 module.exports = { initRobot };

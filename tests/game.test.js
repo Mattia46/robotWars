@@ -5,7 +5,7 @@ describe('Game: ', () => {
   const position = { x: 1, y: 3, heading: 'N' };
   const robotMoves = 'LMLM';
   const robotMock = {
-    position,
+    position: Object.assign({}, position),
     move: jest.fn(),
     getCurrentPosition: jest.fn().mockReturnValue(position)
   };
