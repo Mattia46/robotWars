@@ -1,10 +1,23 @@
-const moveRobot = ({ gameArea, position }) => {
-  if(position.heading === "N" && position.y < gameArea.max_y) position.y++;
+const isHeadingPositionEmpty = ({ headingPosition, rivalPosition = {} }) =>
+    JSON.stringify(headingPosition) === JSON.stringify(rivalPosition)
+      ? false
+      : true;
+
+const moveRobot = ({ gameArea, position, rivalPosition }) => {
+  const originalPosition = { ...position };
+  position.heading === "N"
+    ? position.y < gameArea.max_y
+        ? position.y++
+        : console.log('not enough space')
+    : null;
+
   if(position.heading === "S" && position.y > 0) position.y--;
   if(position.heading === "E" && position.x < gameArea.max_x) position.x++;
   if(position.heading === "W" && position.x > 0) position.x--;
 
-  return position;
+  return isHeadingPositionEmpty({ headingPosition: position, rivalPosition })
+    ? position
+    : originalPosition;
 }
 
 const mappingAction = {
@@ -20,9 +33,9 @@ const rotateRobot = ({ position,  nextAction}) => {
 }
 
 const initRobot = ({ position }) => ({
-  move: ({ gameArea, nextAction }) =>
+  move: ({ gameArea, nextAction, rivalPosition }) =>
     position = nextAction === 'M'
-      ? moveRobot({ gameArea, position})
+      ? moveRobot({ gameArea, position, rivalPosition })
       : rotateRobot({ position, nextAction }),
   getCurrentPosition: () => position,
 });

@@ -15,6 +15,7 @@ const game = initGame({ gameArea: getArea(gameBoundaries) });
 
 game.playRobot(robot1, firstPlayerMoves);
 game.playRobot(robot2, secondPlayerMoves);
+game.playSingleMove(robot1, 'M', robot2.getCurrentPosition());
 
 game.resultRobot(robot1);
 game.resultRobot(robot2);

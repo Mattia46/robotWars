@@ -33,6 +33,14 @@ describe('Robot: ', () => {
       robot.move({ gameArea, nextAction: 'M' });
       expect(robot.getCurrentPosition()).toEqual(position);
     });
+
+    it('when position already taken by other robot', () => {
+      const position = { x: 4, y: 4, heading: 'E' };
+      const rivalPosition = { x: 5, y: 4, heading: 'E' };
+      const robot = initRobot({ position: Object.assign({}, position) });
+      robot.move({ gameArea, nextAction: 'M', rivalPosition });
+      expect(robot.getCurrentPosition()).toEqual(position);
+    });
   });
 
   describe('should Rotate: ', () => {

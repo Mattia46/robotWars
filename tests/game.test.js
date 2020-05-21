@@ -10,6 +10,8 @@ describe('Game: ', () => {
     getCurrentPosition: jest.fn().mockReturnValue(position)
   };
 
+  afterEach(() => robotMock.move.mockClear());
+
   it('should play the game', () => {
     const game = initGame({ gameArea });
     game.playRobot(robotMock, robotMoves);
@@ -26,6 +28,15 @@ describe('Game: ', () => {
     const result = game.resultRobot(robotMock, robotMoves);
     expect(robotMock.getCurrentPosition).toHaveBeenCalled();
     expect(result).toEqual(position);
+  });
+
+  it('should move the robot by one square', () => {
+    const game = initGame({ gameArea });
+    const rivalPosition = {};
+    game.playSingleMove(robotMock, 'M', rivalPosition);
+    expect(robotMock.move).toHaveBeenCalledWith(
+      {gameArea, nextAction: 'M', rivalPosition}
+    );
   });
 });
 

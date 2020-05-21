@@ -14,10 +14,13 @@ describe('Integration test: ', () => {
     game.playRobot(robot1, 'LMLMLMLMM');
     game.playRobot(robot2, 'MMRMMRMRRM');
 
-    const robot1FinalPosition = game.resultRobot(robot1);
-    const robot2FinalPosition = game.resultRobot(robot2);
+    expect(game.resultRobot(robot1)).toEqual(robot1ExpetedPosition);
+    expect(game.resultRobot(robot2)).toEqual(robot2ExpetedPosition);
+  });
 
-    expect(robot1FinalPosition).toEqual(robot1ExpetedPosition);
-    expect(robot2FinalPosition).toEqual(robot2ExpetedPosition);
+  it('should move one step further', () => {
+    const robot1 = initRobot(normaliseInput(['1', '2', 'N']));
+    game.playSingleMove(robot1, 'M', robot2.getCurrentPosition());
+    expect(robot1.getCurrentPosition()).toEqual({x: 1, y: 3, heading: 'N'});
   });
 });
